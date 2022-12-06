@@ -3,14 +3,17 @@
   --primary-text-color: #212121;
   --secondary-text-color: #757575;
   --primary-white-color: #ffffff;
+
   --button-bg-color: #f5f4fa;
+  --button-focus-color: #188ce8;
   --dark-bg-color: #2f303a;
   --bg-main-color: #ffffff;
   --bg-secondary-color: #f5f4fa;
-  --icon-color: #afb1b8;
-  --card-overlay-bg-color: rgba(33, 150, 243, 0.9);
-  --modal-backdrop-color: rgba(0, 0, 0, 0.2);
   --example-img-text-bg-color: rgba(47, 48, 58, 0.8);
+
+  --card-overlay-bg-color: rgba(33, 150, 243, 0.9);
+  --icon-color: #afb1b8;
+  --modal-backdrop-color: rgba(0, 0, 0, 0.2);
   --address-contacts-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -485,6 +488,7 @@ ul {
 
 .footer-page {
   display: flex;
+  align-items: baseline;
 }
 
 .logo-footer {
@@ -569,6 +573,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -584,6 +589,72 @@ ul {
 .footer-page .social-link:hover,
 .footer-page .social-link:focus {
   background-color: var(--accent-color);
+}
+
+.mailing-block {
+  margin-left: 93px;
+}
+
+.mailing-text {
+  display: block;
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--primary-white-color);
+}
+
+.mailing-block [type='email'] {
+  margin-right: 12px;
+  width: 358px;
+  height: 50px;
+}
+
+.mailing-block [placeholder] {
+  padding: 15px 16px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  color: var(--address-contacts-color);
+  background-color: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.mailing-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  padding: 10px 28px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+
+  color: var(--primary-white-color);
+}
+
+.mailing-button:hover,
+.mailing-button:focus {
+  background-color: var(--button-focus-color);
+}
+
+.mailing-group {
+  display: flex;
+}
+
+.mailing-group .icon {
+  margin-left: 10px;
+  fill: currentColor;
 }
 
 /* Портфоліо */
@@ -627,12 +698,13 @@ ul {
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
-
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projects .link {
+  display: block;
   color: inherit;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projects .thumb {
@@ -659,13 +731,14 @@ ul {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.projects .item:hover,
-.projects .item:focus {
+.projects .link:hover,
+.projects .link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.projects .item:hover .card-overlay {
+.projects .link:hover .card-overlay,
+.projects .link:focus .card-overlay {
   transform: translateY(0%);
 }
 
@@ -685,53 +758,48 @@ ul {
 
 /* Кнопки */
 
-.hero-button {
-  padding: 10px 32px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+.button {
   border-radius: 4px;
   border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   color: var(--primary-white-color);
   background-color: var(--accent-color);
 
   font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.88;
-  text-align: center;
-  letter-spacing: 0.06em;
-
-  cursor: pointer;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero-button:hover,
-.hero-button:focus {
-  background-color: #188ce8;
-}
-
-.filter {
-  min-width: 73px;
-  padding: 6px 22px;
-  border-radius: 4px;
-  border: none;
-
-  color: var(--primary-text-color);
-  background-color: var(--button-bg-color);
-
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.62;
-  letter-spacing: 0.03em;
-
   cursor: pointer;
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-button {
+  padding: 10px 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  background-color: var(--button-focus-color);
+}
+
+.filter {
+  min-width: 73px;
+  padding: 6px 22px;
+
+  color: var(--primary-text-color);
+  background-color: var(--button-bg-color);
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
 }
 
 .filter:hover,
@@ -742,6 +810,8 @@ ul {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
 }
+
+/* Модальне вікно */
 
 .backdrop.is-hidden {
   visibility: visible;
@@ -774,6 +844,7 @@ ul {
 
   width: 528px;
   height: 581px;
+  padding: 40px;
   border-radius: 4px;
 
   background-color: var(--bg-main-color);
@@ -782,10 +853,11 @@ ul {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal .close {
+.modal .close-button {
   position: absolute;
   top: 8px;
   right: 8px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -798,9 +870,168 @@ ul {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
 
+  color: var(--primary-text-color);
   background-color: var(--bg-main-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-:focus {
-  outline: none;
+.modal .close-icon {
+  fill: currentColor;
+}
+
+.modal .close-button:hover,
+.modal .close-button:focus {
+  color: var(--accent-color);
+}
+
+.modal-heading {
+  display: block;
+  text-align: center;
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+
+  color: var(--primary-text-color);
+}
+
+/* Форма */
+
+.form {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--secondary-text-color);
+}
+
+.form-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: color 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field + .form-field {
+  margin-top: 10px;
+}
+
+.form-field .icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+
+  color: var(--primary-text-color);
+  fill: currentColor;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field:focus-within .icon {
+  color: var(--accent-color);
+}
+
+.form-field:focus-within .form-input {
+  outline: 1px solid var(--accent-color);
+}
+
+.form-input {
+  height: 40px;
+  margin-top: 4px;
+  padding-left: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  outline: transparent;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-textarea {
+  resize: none;
+  height: 120px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  outline: transparent;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field:focus-within .form-textarea {
+  outline: 1px solid var(--accent-color);
+}
+
+.form-textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+/* Чекбокс */
+
+.form-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+.form-checkbox .checkbox {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.form-checkbox .icon {
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+
+  background-image: url(../images/icon-checkbox.svg);
+}
+
+.checkbox:checked + .icon {
+  background-image: url(../images/icon-check.svg);
+}
+
+.checkbox:focus + .icon {
+  outline: 1px solid var(--primary-text-color);
+  border-radius: 1px;
+}
+
+.policy-agreement {
+  margin-left: 0.3em;
+  color: var(--accent-color);
+}
+
+.form-button {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+}
+
+.form-button:hover,
+.form-button:focus {
+  background-color: var(--button-focus-color);
 }

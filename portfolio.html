@@ -59,11 +59,11 @@
           <!-- Прихований заголовок -->
           <h1 class="portfolio-title visually-hidden">Портфоліо</h1>
           <ul class="filter-list list">
-            <li class="item"><button type="button" class="filter">Усі</button></li>
-            <li class="item"><button type="button" class="filter">Веб-сайти</button></li>
-            <li class="item"><button type="button" class="filter">Додатки</button></li>
-            <li class="item"><button type="button" class="filter">Дизайн</button></li>
-            <li class="item"><button type="button" class="filter">Маркетинг</button></li>
+            <li class="item"><button type="button" class="button filter">Усі</button></li>
+            <li class="item"><button type="button" class="button filter">Веб-сайти</button></li>
+            <li class="item"><button type="button" class="button filter">Додатки</button></li>
+            <li class="item"><button type="button" class="button filter">Дизайн</button></li>
+            <li class="item"><button type="button" class="button filter">Маркетинг</button></li>
           </ul>
           <!--  Приклади робот -->
           <ul class="projects list">
@@ -318,6 +318,7 @@
             </ul>
           </address>
         </div>
+        <!-- Соцмережі -->
         <div class="social">
           <p class="social-text">Приєднуйтесь</p>
           <ul class="social-links-list">
@@ -350,6 +351,19 @@
               </a>
             </li>
           </ul>
+        </div>
+        <!-- Підписка на розсилку -->
+        <div role="group" aria-labelledby="mailing-block" class="mailing-block">
+          <b id="mailing-block" class="mailing-text">Підпишіться на розсилку</b>
+          <div class="mailing-group">
+            <input type="email" name="email" id="mailing-email" placeholder="E-mail" />
+            <button type="submit" class="button mailing-button">
+              Підписатися
+              <svg class="icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-paperplane"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </footer>
